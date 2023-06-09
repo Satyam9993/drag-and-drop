@@ -1,32 +1,26 @@
-const imgBox = document.querySelector('.imgBox');
-const whiteBoxes = document.getElementsByClassName('whiteBox');
+let lists = document.getElementsByClassName("list");
+let rightBox = document.getElementById("right");
+let leftBox = document.getElementById("left");
 
-imgBox.addEventListener('dragstart', (e)=>{
-    e.target.className += ' hold';
-    setTimeout(()=>{
-        e.target.className = 'hide'; 
-    }, 0);
-});
+for (list of lists) {
+    list.addEventListener("dragstart", (e)=>{
+        let selected = e.target;
 
-imgBox.addEventListener('dragend', (e)=>{
-    e.target.className = 'imgBox';
-});
+        rightBox.addEventListener("dragover", (e)=>{
+            e.preventDefault();
+        })
 
-for (whiteBox of whiteBoxes){
-    whiteBox.addEventListener('dragover', (e)=>{
-        e.preventDefault();
-        console.log("dragover is trigger");
-    })
+        rightBox.addEventListener("drop", (e)=>{
+            rightBox.appendChild(selected);
+            selected = null;
+        })
+        leftBox.addEventListener("dragover", (e)=>{
+            e.preventDefault();
+        })
 
-    whiteBox.addEventListener('dragenter', ()=>{
-        console.log("dragenter is trigger");
-    })
-
-    whiteBox.addEventListener('dragleave', ()=>{
-        console.log("dragleave is trigger");
-    })
-
-    whiteBox.addEventListener('drop', (e)=>{
-        e.target.append(imgBox);
+        leftBox.addEventListener("drop", (e)=>{
+            leftBox.appendChild(selected);
+            selected = null;
+        })
     })
 }

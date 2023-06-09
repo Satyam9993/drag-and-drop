@@ -1,30 +1,45 @@
-body{
-    background-color: rgb(8, 0, 58);
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'sans-serif';
+    box-sizing: border-box;
 }
 
-.imgBox {
-    background-image: url('image.png');
-    position: relative;
-    top:8px;
-    left: 10px;
-    height: 80px;
-    width: 80px; 
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: #0d0723;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.whiteBox {
-    background-color: beige;
-    display: inline-block;
-    margin: 10px;
-    height: 100px;
-    width: 100px;
-    border: 2px solid rgb(48, 243, 237);
+#left {
+    width: 300px;
+    min-height: 400px;
+    margin: 20px;
+    border: 2px solid #fff;
+}
+
+#right{
+    width: 300px;
+    min-height: 400px;
+    margin: 20px;
+    border: 2px solid #fff;
+}
+
+.list {
+    background-color: #e91e63;
+    height: 60px;
+    margin: 30px;
+    color: #fff;
+    display: flex;
+    align-items: center;
     cursor: pointer;
 }
 
-.hold {
-    border: 4px solid red;
-}
-
-.hide {
-    display: none;
+.icon{
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
 }
